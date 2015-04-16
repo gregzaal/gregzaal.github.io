@@ -1,0 +1,412 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+
+
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <title>Node Wrangler | Greg Zaal | Code</title>
+    <link type="text/css" rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+</head>
+
+<!-- Google Fonts: -->
+<link href='http://fonts.googleapis.com/css?family=Raleway:800' rel='stylesheet' type='text/css'>
+
+<body style="background-image:url(images/bg.png)">
+
+<div class="title">
+    <a href="http://code.gregzaal.com/"><h1>code.gregzaal.com</h1></a>
+</div>
+
+<div class='nav-bar'>
+<table border="0" cellspacing="0" width="100%">
+    <tr>
+        <td>
+            <i class="nav-button fa fa-home fa-fw fa-2x"></i>
+        </td>
+        <td class="page-title">
+            Node Wrangler
+        </td>
+        <td align="right">
+            <i class="nav-button fa fa-question-circle fa-fw fa-2x"></i>
+        </td>
+    </tr>
+</table>
+</div>
+
+<div class="block-full-wrapper">
+    <p id="text" class="block-full">
+        Once upon a time there was an add-on called <i>Node Efficiency Tools</i>, created by a compositor named Bartek Skorupa. It was a great, functional add-on that everybody loved. <br/>
+        And then one day, a crazy shading artist came along and ruined everything. <br/>
+        Just kidding. <br/>
+        Bartek and I have joined forces to create the most powerful Blender node editing add-on in the world! (It's the only one)
+    </p>
+</div>
+
+<div class="button-wrapper">
+    <a href="http://git.blender.org/gitweb/gitweb.cgi/blender-addons.git/blob_plain/HEAD:/node_efficiency_tools.py"><div class="button">Download</div></a>&nbsp;&nbsp;&nbsp;
+    <a href="https://developer.blender.org/diffusion/BA/history/master/node_efficiency_tools.py"><div class="button">Change Log</div></a>
+</div>
+
+
+
+<!-- Demo -->
+<div media="screen and (min-width: 1200px)">
+<center>
+    <video controls>
+            <source src="nw_demo.webm" type="video/webm" />
+            <source src="nw_demo.mp4" type="video/mp4" />
+    </video>
+</center>
+</div>
+
+
+
+
+<h2>Major Features</h2>
+<div class="center-column">
+    <div class="block">
+        <table border="0" cellspacing="0" width="100%">
+            <tr>
+                <td>
+                    <h3>Lazy Functions</h3>
+                    <p class="indented-extra">
+                        These three functions are meant to allow you to make connections between nodes without needing to click on those tiny sockets.
+                    </p>
+                    <p class="indented-extra">
+                        This is particularly useful if you have a huge node tree and prefer to stay zoomed out.
+                    </p>
+                    <p class="indented-extra">
+                        All three functions work by holding down the right mouse button (RMB) and drawing a line between two nodes. You don't even have to click exactly on the node, it will pick the nearest one.
+                    </p>
+                    <p class="indented-extra">
+                        <b>Lazy Connect</b> <i>(Ctrl + RMB)</i> will make a new link between the first unconnected input of the first node and first unconnected output of the same type as the input of the second node. If there are no sockets with the same type, it will choose the next unconnected input of any other type. If there are no unconnected sockets on the second node, it will pick a connected one to replace.
+                    </p>
+                    <p class="indented-extra">
+                        <b>Lazy Connect with Menu</b> <i>(Ctrl + Shift + RMB)</i> is almost the same as <i>Lazy Connect</i>, except that it will allow you to choose the input and output sockets to connect by displaying two popup menus. If either the input or output nodes have only one socket, it'll skip one of the menus. If both input and output nodes have only one socket, it will act exactly the same as the regular <i>Lazy Connect</i>.
+                    </p>
+                    <p class="indented-extra">
+                        <b>Lazy Mix</b> <i>(Alt + RMB)</i> will create a mix node and connect the two chosen nodes. This acts exactly the same as selecting the nodes and using <i>Merge Nodes (Ctrl + 0)</i> .
+                    </p>
+                </td>
+                <td>
+                    <div align="right">
+                        <p><img src="gifs/Nw_lazy_connect.gif"/>&nbsp;</p>
+                        <p><img src="gifs/Nw_lazy_menu_connect.gif"/>&nbsp;</p>
+                        <p><img src="gifs/Nw_lazy_mix.gif"/>&nbsp;</p>
+                    </div>
+                </td>
+            </tr>
+            <tr><td><div class="line-thin"></div></td><td><div class="line-thin"></div></td></tr>
+            <tr>
+                <td>
+                    <h3>Merge</h3>
+                    <p class="indented-extra">
+                        Mixing several images, render layers, passes or textures together is the most common thing you'll ever do in the node editor. With this function, all you need to do to mix/add/multiply/whatever two or more nodes together is push one little button while holding <i>Ctrl.</i>
+                    </p>
+                    <p class="indented-extra">
+                        <b>Mix:</b> <i>Ctrl + 0</i><br/>
+                        <b>Add:</b> <i>Ctrl + '+'</i><br/>
+                        <b>Subtract:</b> <i>Ctrl + '-'</i><br/>
+                        <b>Multiply:</b> <i>Ctrl + '*'</i><br/>
+                        <b>Divide:</b> <i>Ctrl + '/'</i><br/>
+                        <b>Z-Combine:</b> <i>Ctrl + Alt + 0</i><br/>
+                        <b>Alpha Over:</b> <i>Ctrl + Numpad '.'</i><br/>
+                        <b>Greater Than:</b> <i>Ctrl + '>'</i><br/>
+                        <b>Less Than:</b> <i>Ctrl + '<'</i><br/>
+                    </p>                    
+                    <div class="note">
+                        <h4>Note:</h4>
+                        <p>There are even more specific merging operations with their own hotkeys - too many to list here, so take a look at the <a href="#hotkey-list">hotkey list</a>.</p>
+                    </div>
+                </td>
+                <td>
+                    <div align="right">
+                        <p><img src="gifs/Nw_merge_selected.gif"/>&nbsp;</p>
+                    </div>
+                </td>
+            </tr>
+            <tr><td><div class="line-thin"></div></td><td><div class="line-thin"></div></td></tr>
+            <tr>
+                <td>
+                    <h3>Emission Viewer</h3>
+                    <p class="indented-extra">
+                        Just like the compositor, you can now add a <i>viewer node</i> for Cycles materials.
+                    </p>
+                    <p class="indented-extra">
+                        Simply <i>Ctrl + Shift + Click</i> a node, and it is connected automatically to a viewer node (which is created if it doesn't exist).
+                    </p>
+                    <p class="indented-extra">
+                        The viewer node is actually just an emission shader. This means you're looking at the exact color values of whatever you clicked on, there is no shading to mess with your head.
+                    </p>
+                    <p class="indented-extra">
+                        If you click on a shader node, it connects that straight to the material output (instead of using the emission shader).
+                    </p>
+                    <p class="indented-extra">
+                        You can click on the same node multiple times to cycle through all of its outputs.
+                    </p>
+                </td>
+                <td>
+                    <div align="right">
+                        <p><img src="gifs/Nw_viewer.gif"/>&nbsp;</p>
+                    </div>
+                </td>
+            </tr>
+            <tr><td><div class="line-thin"></div></td><td><div class="line-thin"></div></td></tr>
+            <tr>
+                <td>
+                    <h3>Batch Change Blend Type / Math Operation</h3>
+                    <p class="indented-extra">
+                        Change the blend type of all selected mix nodes and math nodes using:
+                    </p>
+                    <p class="indented-extra">
+                        <b>Mix:</b> <i>Alt + 0</i><br/>
+                        <b>Add:</b> <i>Alt + '+'</i><br/>
+                        <b>Subtract:</b> <i>Alt + '-'</i><br/>
+                        <b>Multiply:</b> <i>Alt + '*'</i><br/>
+                        <b>Divide:</b> <i>Alt + '/'</i><br/>
+                        <b>Greater Than:</b> <i>Alt + '>'</i><br/>
+                        <b>Less Than:</b> <i>Alt + '<'</i><br/>
+                        <b>Cycle Up:</b> <i>Alt + &#8593;</i><br/>
+                        <b>Cycle Down:</b> <i>Alt + &#8595;</i><br/>
+                    </p>   
+                </td>
+                <td>
+                    <div align="right">
+                        <p><img src="gifs/Nw_batch_change_mode.gif"/>&nbsp;</p>
+                    </div>
+                </td>
+            </tr>
+            <tr><td><div class="line-thin"></div></td><td><div class="line-thin"></div></td></tr>
+            <tr>
+                <td>
+                    <h3>Swap Links</h3>
+                    <p class="indented-extra">
+                        This tool allows you to swap and cycle links in several situations:
+                    </p>
+                    <p class="indented-extra">
+                        <ul>
+                            <li>Select two nodes, use <i>Alt + S</i> to swap their output connections.</li>
+                            <li>Select one node with one connected input, use <i>Alt + S</i> to cycle the connection through the sockets.</li>
+                            <li>Select one node with two connected inputs, use <i>Alt + S</i> to swap the two connections. If more then two inputs are linked, the two with matching types will be swapped (e.g: a Mix node's two color inputs). </li>
+                        </ul>
+                    </p>
+                </td>
+                <td>
+                    <div align="right">
+                        <p><img src="gifs/Nw_swap_outputs.gif"/>&nbsp;</p>
+                    </div>
+                </td>
+            </tr>
+            <tr><td><div class="line-thin"></div></td><td><div class="line-thin"></div></td></tr>
+            <tr>
+                <td>
+                    <h3>Frame Selected</h3>
+                    <p class="indented-extra">
+                        Wrap selected nodes in a frame by pressing <i>Shift + P</i> (similar to using the existing function, <i>Ctrl + J </i>), then press <i>F6</i> to set the color and label of the frame node.
+                    </p>
+                </td>
+                <td>
+                    <div align="right">
+                        <p><img src="gifs/Nw_frameselection.gif"/>&nbsp;</p>
+                    </div>
+                </td>
+            </tr>
+            <tr><td><div class="line-thin"></div></td><td><div class="line-thin"></div></td></tr>
+            <tr>
+                <td>
+                    <h3>Switch Node Type</h3>
+                    <p class="indented-extra">
+                        Blahblahblahblah
+                    </p>
+                </td>
+                <td>
+                    <div align="right">
+                        <p><img src="gifs/Nw_Switch_type.gif"/>&nbsp;</p>
+                    </div>
+                </td>
+            </tr>
+            <tr><td><div class="line-thin"></div></td><td><div class="line-thin"></div></td></tr>
+            <tr>
+                <td>
+                    <h3>Copy Settings</h3>
+                    <p class="indented-extra">
+                        Blahblahblahblah
+                    </p>
+                </td>
+                <td>
+                    <div align="right">
+                        <p><img src="gifs/Nw_copy_settings.gif"/>&nbsp;</p>
+                    </div>
+                </td>
+            </tr>
+            <tr><td><div class="line-thin"></div></td><td><div class="line-thin"></div></td></tr>
+            <tr>
+                <td>
+                    <h3>Add Texture Setup</h3>
+                    <p class="indented-extra">
+                        Blahblahblahblah
+                    </p>
+                </td>
+                <td>
+                    <div align="right">
+                        <p><img src="gifs/Nw_add_texture_setup.gif"/>&nbsp;</p>
+                    </div>
+                </td>
+            </tr>
+            <tr><td><div class="line-thin"></div></td><td><div class="line-thin"></div></td></tr>
+            <tr>
+                <td>
+                    <h3>Add Reroutes to Outputs</h3>
+                    <p class="indented-extra">
+                        Blahblahblahblah
+                    </p>
+                </td>
+                <td>
+                    <div align="right">
+                        <p><img src="gifs/Nw_add_reroutes.gif"/>&nbsp;</p>
+                    </div>
+                </td>
+            </tr>
+            <tr><td><div class="line-thin"></div></td><td><div class="line-thin"></div></td></tr>
+            <tr>
+                <td>
+                    <h3>Link Active to Selected</h3>
+                    <p class="indented-extra">
+                        Blahblahblahblah
+                    </p>
+                </td>
+                <td>
+                    <div align="right">
+                        <p><img src="gifs/Nw_link_active_to_selected.gif"/>&nbsp;</p>
+                    </div>
+                </td>
+            </tr>
+            <tr><td><div class="line-thin"></div></td><td><div class="line-thin"></div></td></tr>
+            <tr>
+                <td>
+                    <h3>Link to Output Node</h3>
+                    <p class="indented-extra">
+                        Blahblahblahblah
+                    </p>
+                </td>
+                <td>
+                    <div align="right">
+                        <p><img src="gifs/Nw_merge_selected.gif"/>&nbsp;</p>
+                    </div>
+                </td>
+            </tr>
+
+        </table>
+    </div>
+</div>
+
+<h2>Minor Features</h2>
+<div class="center-column">
+    <div class="block">
+
+        <table cellspacing="0" cellpadding="10">
+            <tr>
+                <td style="width:230px"><h3>Change Mix Factor</h3></td>
+                <td style="width:200px"><p class="center-align"><i>(Alt + Left/Right)</i></p></td>
+                <td><p class="padded-vertical">Increase or decrease the Fac of selected Mix nodes (0.1, Alt + Shift 0.01, Ctrl + Alt + Shift 1.0).</p></td>
+            </tr>
+            <tr>
+                <td style="width:230px"><h3>Delete Unused Nodes</h3></td>
+                <td style="width:200px"><p class="center-align"><i>(Alt + X)</i></p></td>
+                <td><p class="padded-vertical">Delete all nodes whose outputs have no connections (excludes final output nodes such as Composite, Viewer and Material Output).</p></td>
+            </tr>
+            <tr>
+                <td style="width:230px"><h3>Reset Backdrop</h3></td>
+                <td style="width:200px"><p class="center-align"><i>(Z)</i></p></td>
+                <td><p class="padded-vertical">Move the backdrop image back to the center with 1.0 zoom.</p></td>
+            </tr>
+            <tr>
+                <td style="width:230px"><h3>Vertex Color Node</h3></td>
+                <td style="width:200px"><p class="center-align"><i>(Add > Input)</i></p></td>
+                <td><p class="padded-vertical">Add an Attribute node with the Vertex Color name already filled in.</p></td>
+            </tr>
+            <tr>
+                <td style="width:230px"><h3>Reload Images</h3></td>
+                <td style="width:200px"><p class="center-align"><i>(Alt + R)</i></p></td>
+                <td><p class="padded-vertical">Update all images in the node tree.</p></td>
+            </tr>
+            <tr>
+                <td style="width:230px"><h3>Copy Label</h3></td>
+                <td style="width:200px"><p class="center-align"><i>(Shift + C)</i></p></td>
+                <td><p class="padded-vertical">Copy the label from the active node to selected nodes, or from linked inputs/outputs</p></td>
+            </tr>
+            <tr>
+                <td style="width:230px"><h3>Clear Label</h3></td>
+                <td style="width:200px"><p class="center-align"><i>(Alt + L)</i></p></td>
+                <td><p class="padded-vertical">Revert the label to an empty string, telling Blender to display the node type instead.</p></td>
+            </tr>
+            <tr>
+                <td style="width:230px"><h3>Modify Label</h3></td>
+                <td style="width:200px"><p class="center-align"><i>(Alt + Shift + L)</i></p></td>
+                <td><p class="padded-vertical">Add a prefix or suffix to selected nodes' labels, or replace certain text with something else.</p></td>
+            </tr>
+            <tr>
+                <td style="width:230px"><h3>Align Nodes</h3></td>
+                <td style="width:200px"><p class="center-align"><i>(Shift + '=')</i></p></td>
+                <td><p class="padded-vertical">Align nodes either vertically or horizontally, with even spacing between them.</p></td>
+            </tr>
+            <tr>
+                <td style="width:230px"><h3>Select Frame/Children</h3></td>
+                <td style="width:200px"><p class="center-align"><i>( [ or ] )</i></p></td>
+                <td><p class="padded-vertical">Select the parent (the frame containing the selected nodes) or the children (all nodes inside the selected frame nodes).</p></td>
+            </tr>
+            <tr>
+                <td style="width:230px"><h3>Detach Outputs</h3></td>
+                <td style="width:200px"><p class="center-align"><i>(Alt + Shift + D)</i></p></td>
+                <td><p class="padded-vertical">Grab a node while disconnecting its outputs. Similar to Alt + D, but keeps inputs connected.</p></td>
+            </tr>
+            <tr>
+                <td style="width:230px"><h3>Add Image Sequence</h3></td>
+                <td style="width:200px"><p class="center-align"><i>(Add > Input)</i></p></td>
+                <td><p class="padded-vertical">Select a single image from the file browser and an Image node will be added with the sequence length already filled in.</p></td>
+            </tr>
+            <tr>
+                <td style="width:230px"><h3>Add Multiple Images</h3></td>
+                <td style="width:200px"><p class="center-align"><i>(Add > Input)</i></p></td>
+                <td><p class="padded-vertical">Select multiple images in the file browser to add an Image node for each in one go.</p></td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<a name="hotkey-list"><h2>Hotkey List</h2></a>
+<div class="center-column">
+    <div class="block">
+    <p>
+        As I'm sure you're now aware, Node Wrangler has a rather large number of hotkeys. The easiest way to see them all and search for them is in the <i>User Preferences</i> of the add-on itself:
+    </p>
+    <p><center>
+        <img src="user_prefs.png" alt="Node Wrangler User Preferences image">
+    </center></p>
+    </div>
+</div>
+
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+
+<div class="footer">
+    <table width="100%">
+        <tr>
+            <td><p>All content copyright Greg Zaal unless otherwise stated</p></td>
+            <td><div align="right"><p>Email: greg [at] gregzaal.com</p></div></td>
+        </tr>
+    </table>
+</div>
+
+
+</body>
+</html>
