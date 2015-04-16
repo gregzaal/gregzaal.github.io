@@ -131,6 +131,7 @@ ul {
 .note {
     margin-left: 28px;
     margin-right: 48px;
+    margin-top: 8px;
     padding: 10px 20px;
     color: #888;
     background: #ddd;
@@ -143,6 +144,11 @@ ul {
 
 .note a:visited {
     color: #82A8CF;
+}
+
+.download-note {
+    padding: 1.5em;
+    color: #B2C0CF;
 }
 
 .indented {
@@ -179,6 +185,13 @@ ul {
     }
 }
 
+.kbd {
+    padding: 0.05em 0.3em;
+    background: #e4e4e4;
+    border: solid 1px #ccc;
+    border-radius: 0.2em;
+}
+
 .tile-size-table {
     color: #eee;
     padding: 1em 10em;
@@ -212,29 +225,30 @@ ul {
     border-radius: 5px;
 }
 
-.block-full-wrapper {
+.description-block-wrapper {
     padding-top: 20px;
     padding-bottom: 20px;
     background: #eee;
 }
-.block-full {
+.description-block {
     padding: 15px;
     margin-left: 25%;
     margin-right: 25%;
+    text-align: center;
 }
 @media screen and (max-width:1400px){
-    .block-full {
+    .description-block {
         margin-left: 10%;
         margin-right: 10%;
     }
 }
 @media screen and (max-width:1024px){
-    .block-full {
+    .description-block {
         margin-left: 4px;
         margin-right: 4px;
     }
 }
-.block-full-inner {
+.description-block-inner {
     display: block;
     margin: 2em 0;
     line-height:22px;
@@ -273,6 +287,7 @@ ul {
 }
 
 .button-wrapper {
+    padding: 2em 0em;
     vertical-align: middle;
     width: 100%;
     text-align:center;

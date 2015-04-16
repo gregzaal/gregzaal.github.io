@@ -9,9 +9,10 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <title>Node Wrangler | Greg Zaal | Code</title>
+    <title>Node Wrangler</title>
     <link type="text/css" rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <link rel="shortcut icon" type="image/png" href="favicon.png"/>
 </head>
 
 <!-- Google Fonts: -->
@@ -20,39 +21,22 @@
 <body style="background-image:url(images/bg.png)">
 
 <div class="title">
-    <a href="http://code.gregzaal.com/"><h1>code.gregzaal.com</h1></a>
+    <h1>Node Wrangler</h1>
 </div>
 
-<div class='nav-bar'>
-<table border="0" cellspacing="0" width="100%">
-    <tr>
-        <td>
-            <i class="nav-button fa fa-home fa-fw fa-2x"></i>
-        </td>
-        <td class="page-title">
-            Node Wrangler
-        </td>
-        <td align="right">
-            <i class="nav-button fa fa-question-circle fa-fw fa-2x"></i>
-        </td>
-    </tr>
-</table>
-</div>
-
-<div class="block-full-wrapper">
-    <p id="text" class="block-full">
-        Once upon a time there was an add-on called <i>Node Efficiency Tools</i>, created by a compositor named Bartek Skorupa. It was a great, functional add-on that everybody loved. <br/>
-        And then one day, a crazy shading artist came along and ruined everything. <br/>
-        Just kidding. <br/>
-        Bartek and I have joined forces to create the most powerful Blender node editing add-on in the world! (It's the only one)
+<div class="description-block-wrapper">
+    <p id="text" class="description-block">
+        Node Wrangler is a suite of tools designed and coded by industry professionals, <b>Bartek Skorupa</b> and <b>Greg Zaal</b>, to help make node editing in Blender easier and quicker, for both <i>compositing</i> and <i>material</i> workflows.
     </p>
 </div>
 
-<div class="button-wrapper">
-    <a href="http://git.blender.org/gitweb/gitweb.cgi/blender-addons.git/blob_plain/HEAD:/node_efficiency_tools.py"><div class="button">Download</div></a>&nbsp;&nbsp;&nbsp;
-    <a href="https://developer.blender.org/diffusion/BA/history/master/node_efficiency_tools.py"><div class="button">Change Log</div></a>
-</div>
 
+<!-- Download & Change Log -->
+<div class="button-wrapper">
+    <a href="https://git.blender.org/gitweb/gitweb.cgi/blender-addons.git/blob_plain/HEAD:/node_wrangler.py"><div class="button">Download</div></a>&nbsp;&nbsp;&nbsp;
+    <a href="https://developer.blender.org/diffusion/BA/history/master/node_wrangler.py"><div class="button">Change Log</div></a>
+    <p class="download-note"><b>Note:</b> Node Wrangler is included in Blender by default, so you probably already have it installed.</p>
+</div>
 
 
 <!-- Demo -->
@@ -114,12 +98,7 @@
                         <b>Add:</b> <i>Ctrl + '+'</i><br/>
                         <b>Subtract:</b> <i>Ctrl + '-'</i><br/>
                         <b>Multiply:</b> <i>Ctrl + '*'</i><br/>
-                        <b>Divide:</b> <i>Ctrl + '/'</i><br/>
-                        <b>Z-Combine:</b> <i>Ctrl + Alt + 0</i><br/>
-                        <b>Alpha Over:</b> <i>Ctrl + Numpad '.'</i><br/>
-                        <b>Greater Than:</b> <i>Ctrl + '>'</i><br/>
-                        <b>Less Than:</b> <i>Ctrl + '<'</i><br/>
-                    </p>                    
+                    </p>
                     <div class="note">
                         <h4>Note:</h4>
                         <p>There are even more specific merging operations with their own hotkeys - too many to list here, so take a look at the <a href="#hotkey-list">hotkey list</a>.</p>
@@ -313,67 +292,67 @@
         <table cellspacing="0" cellpadding="10">
             <tr>
                 <td style="width:230px"><h3>Change Mix Factor</h3></td>
-                <td style="width:200px"><p class="center-align"><i>(Alt + Left/Right)</i></p></td>
+                <td style="width:200px"><p class="center-align"><span class="kbd">Alt</span> + <span class="kbd">Left</span>/<span class="kbd">Right</span></p></td>
                 <td><p class="padded-vertical">Increase or decrease the Fac of selected Mix nodes (0.1, Alt + Shift 0.01, Ctrl + Alt + Shift 1.0).</p></td>
             </tr>
             <tr>
                 <td style="width:230px"><h3>Delete Unused Nodes</h3></td>
-                <td style="width:200px"><p class="center-align"><i>(Alt + X)</i></p></td>
+                <td style="width:200px"><p class="center-align"><span class="kbd">Alt</span> + <span class="kbd">X</span></p></td>
                 <td><p class="padded-vertical">Delete all nodes whose outputs have no connections (excludes final output nodes such as Composite, Viewer and Material Output).</p></td>
             </tr>
             <tr>
                 <td style="width:230px"><h3>Reset Backdrop</h3></td>
-                <td style="width:200px"><p class="center-align"><i>(Z)</i></p></td>
+                <td style="width:200px"><p class="center-align"><span class="kbd">Z</span></p></td>
                 <td><p class="padded-vertical">Move the backdrop image back to the center with 1.0 zoom.</p></td>
             </tr>
             <tr>
                 <td style="width:230px"><h3>Vertex Color Node</h3></td>
-                <td style="width:200px"><p class="center-align"><i>(Add > Input)</i></p></td>
+                <td style="width:200px"><p class="center-align"><span class="kbd">Add</span> > <span class="kbd">Input</span></p></td>
                 <td><p class="padded-vertical">Add an Attribute node with the Vertex Color name already filled in.</p></td>
             </tr>
             <tr>
                 <td style="width:230px"><h3>Reload Images</h3></td>
-                <td style="width:200px"><p class="center-align"><i>(Alt + R)</i></p></td>
+                <td style="width:200px"><p class="center-align"><span class="kbd">Alt</span> + <span class="kbd">R</span></p></td>
                 <td><p class="padded-vertical">Update all images in the node tree.</p></td>
             </tr>
             <tr>
                 <td style="width:230px"><h3>Copy Label</h3></td>
-                <td style="width:200px"><p class="center-align"><i>(Shift + C)</i></p></td>
+                <td style="width:200px"><p class="center-align"><span class="kbd">Shift</span> + <span class="kbd">C</span></p></td>
                 <td><p class="padded-vertical">Copy the label from the active node to selected nodes, or from linked inputs/outputs</p></td>
             </tr>
             <tr>
                 <td style="width:230px"><h3>Clear Label</h3></td>
-                <td style="width:200px"><p class="center-align"><i>(Alt + L)</i></p></td>
+                <td style="width:200px"><p class="center-align"><span class="kbd">Alt</span> + <span class="kbd">L</span></p></td>
                 <td><p class="padded-vertical">Revert the label to an empty string, telling Blender to display the node type instead.</p></td>
             </tr>
             <tr>
                 <td style="width:230px"><h3>Modify Label</h3></td>
-                <td style="width:200px"><p class="center-align"><i>(Alt + Shift + L)</i></p></td>
+                <td style="width:200px"><p class="center-align"><span class="kbd">Alt</span> + <span class="kbd">Shift</span> + <span class="kbd">L</span></p></td>
                 <td><p class="padded-vertical">Add a prefix or suffix to selected nodes' labels, or replace certain text with something else.</p></td>
             </tr>
             <tr>
                 <td style="width:230px"><h3>Align Nodes</h3></td>
-                <td style="width:200px"><p class="center-align"><i>(Shift + '=')</i></p></td>
+                <td style="width:200px"><p class="center-align"><span class="kbd">Shift</span> + <span class="kbd">=</span></p></td>
                 <td><p class="padded-vertical">Align nodes either vertically or horizontally, with even spacing between them.</p></td>
             </tr>
             <tr>
                 <td style="width:230px"><h3>Select Frame/Children</h3></td>
-                <td style="width:200px"><p class="center-align"><i>( [ or ] )</i></p></td>
+                <td style="width:200px"><p class="center-align"> <span class="kbd">[</span> / <span class="kbd">]</span> </p></td>
                 <td><p class="padded-vertical">Select the parent (the frame containing the selected nodes) or the children (all nodes inside the selected frame nodes).</p></td>
             </tr>
             <tr>
                 <td style="width:230px"><h3>Detach Outputs</h3></td>
-                <td style="width:200px"><p class="center-align"><i>(Alt + Shift + D)</i></p></td>
+                <td style="width:200px"><p class="center-align"><span class="kbd">Alt</span> + <span class="kbd">Shift</span> + <span class="kbd">D</span></p></td>
                 <td><p class="padded-vertical">Grab a node while disconnecting its outputs. Similar to Alt + D, but keeps inputs connected.</p></td>
             </tr>
             <tr>
                 <td style="width:230px"><h3>Add Image Sequence</h3></td>
-                <td style="width:200px"><p class="center-align"><i>(Add > Input)</i></p></td>
+                <td style="width:200px"><p class="center-align"><span class="kbd">Add</span> > <span class="kbd">Input</span></p></td>
                 <td><p class="padded-vertical">Select a single image from the file browser and an Image node will be added with the sequence length already filled in.</p></td>
             </tr>
             <tr>
                 <td style="width:230px"><h3>Add Multiple Images</h3></td>
-                <td style="width:200px"><p class="center-align"><i>(Add > Input)</i></p></td>
+                <td style="width:200px"><p class="center-align"><span class="kbd">Add</span> > <span class="kbd">Input</span></p></td>
                 <td><p class="padded-vertical">Select multiple images in the file browser to add an Image node for each in one go.</p></td>
             </tr>
         </table>
@@ -387,7 +366,7 @@
         As I'm sure you're now aware, Node Wrangler has a rather large number of hotkeys. The easiest way to see them all and search for them is in the <i>User Preferences</i> of the add-on itself:
     </p>
     <p><center>
-        <img src="user_prefs.png" alt="Node Wrangler User Preferences image">
+        <img src="images/user_prefs.png" alt="Node Wrangler User Preferences image">
     </center></p>
     </div>
 </div>
