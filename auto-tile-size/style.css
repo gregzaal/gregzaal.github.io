@@ -44,9 +44,11 @@ h1:hover {
     transition: 500ms  cubic-bezier(0,0,0.2,1) 0s;
 }
 
+/*
 video {
     box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.3);
 }
+*/
 
 h2 {
     padding-top: 50px;
@@ -113,6 +115,7 @@ a {
 }
 
 .footer {
+    margin-top: 2cm;
     padding: 10px;
     font-size: 0.8em;
     color: #ddd;
@@ -131,7 +134,6 @@ ul {
 .note {
     margin-left: 28px;
     margin-right: 48px;
-    margin-top: 8px;
     padding: 10px 20px;
     color: #888;
     background: #ddd;
@@ -144,11 +146,6 @@ ul {
 
 .note a:visited {
     color: #82A8CF;
-}
-
-.download-note {
-    padding: 1.5em;
-    color: #B2C0CF;
 }
 
 .indented {
@@ -185,19 +182,12 @@ ul {
     }
 }
 
-.kbd {
-    padding: 0.05em 0.3em;
-    background: #e4e4e4;
-    border: solid 1px #ccc;
-    border-radius: 0.2em;
-}
-
 .tile-size-table {
     color: #eee;
     padding: 1em 10em;
 }
 .tile-size-table table {
-    border: #131926;
+    border: #1d2331;
     border-style: solid;
     border-width: 4px;
     border-collapse: collapse;
@@ -215,6 +205,10 @@ ul {
     font-weight: 900;
 }
 
+.tile-size-table-subtitle {
+    background-color: #1d2331;
+}
+
 .center-align {
     text-align: center;
 }
@@ -225,46 +219,61 @@ ul {
     border-radius: 5px;
 }
 
-.description-block-wrapper {
+.block-full-wrapper {
     padding-top: 20px;
     padding-bottom: 20px;
     background: #eee;
 }
-.description-block {
-    padding: 15px;
-    margin-left: 25%;
-    margin-right: 25%;
-    text-align: center;
+.block-full {
+    overflow: hidden;
+    width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
 }
-@media screen and (max-width:1400px){
-    .description-block {
-        margin-left: 10%;
-        margin-right: 10%;
-    }
-}
+/*
 @media screen and (max-width:1024px){
-    .description-block {
+    .block-full {
         margin-left: 4px;
         margin-right: 4px;
     }
+}*/
+
+.intro-block-left {
+    padding: 2em;
+    padding-top: 6em;
+    width: 850px;
+    float: left;
+    height: 554;
 }
-.description-block-inner {
-    display: block;
+.intro-block-right {
+    width: 362px;
+    float: left;
+}
+@media screen and (max-width:1300px){
+    .block-full {
+        width: 100%;
+    }
+
+    .intro-block-left {
+        padding-top: 2em;
+        width: 80%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .intro-block-right {
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.block-full-inner {
     margin: 2em 0;
     line-height:22px;
     content: " ";
 }
 
-@media screen and (max-width:1200px){
-    video {
-        width: 800px;
-    }
-}
-@media screen and (max-width:800px){
-    video {
-        width: 500px;
-    }
-}
 
 .button {
     display: inline-block;
@@ -287,7 +296,6 @@ ul {
 }
 
 .button-wrapper {
-    padding: 2em 0em;
     vertical-align: middle;
     width: 100%;
     text-align:center;
