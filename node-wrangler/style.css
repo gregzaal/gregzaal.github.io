@@ -2,15 +2,22 @@
 @font-face { font-family: ChangaOne; src: url('../fonts/ChangaOne.ttf'); }
 
 /*
+
 Colours:
-    blue: 262c3a
-    light blue: 78849
-    dark blue: 1d2331
-    green: 8ad558
-    light green: dbffc4
+
+    Background: rgb(240, 240, 240)
+        Darker: rgb(220, 220, 220)
+
+    Accent: rgb(83, 161, 184)
+        Ligher: rgb(117, 180, 198)
+
+    Text: rgb(110, 110, 110)
+        Darker: rgb(95, 95, 95)
+        Lighter: rgb(125, 125, 125);
 
 Image size:
     500 x 120
+
 */
 
 * {
@@ -20,12 +27,16 @@ Image size:
     font-family: 'Roboto', sans-serif;
 }
 
+body {
+    background-color: rgb(240, 240, 240);
+}
+
 h1 {
     padding-top: 50px;
     padding-bottom: 60px;
     font-family: 'ChangaOne';
     font-size: 3em;
-    color: #fff;
+    color: rgb(240, 240, 240);
     text-align:center;
     width: 100%;
     margin-left: auto;
@@ -58,19 +69,19 @@ h2 {
     font-family: 'Raleway', sans-serif;
     font-size: 2em;
     text-align:left;
-    color: #eee;
+    color: rgb(83, 161, 184);
     word-spacing: 12px;
 }
 
 h3 {
     font-family: 'Raleway', sans-serif;
-    color: #333;
+    color: rgb(83, 161, 184);
     padding-left: 10px;
 }
 
 h4 {
     font-family: 'Raleway', sans-serif;
-    color: #82A8CF;
+    color: rgb(83, 161, 184);
     margin-left: 1em;
 }
 
@@ -92,11 +103,11 @@ a {
 }
 
 .title {
-    background-image: url('images/bg_blue.png');
+    background-color: rgb(83, 161, 184);
 }
 
 .nav-bar {
-    color: #eee;
+    color: rgb(240, 240, 240);
     width: 100%;
     background: #1d2331;
 }
@@ -106,7 +117,7 @@ a {
     padding-bottom: 10px;
     font-family: 'ChangaOne';
     font-size: 2.3em;
-    color: #eee;
+    color: rgb(240, 240, 240);
     text-align:center;
     width: 100%;
     background: #1d2331;
@@ -123,6 +134,10 @@ ul {
     padding-left: 50px;
 }
 
+.gif {
+    padding-top: 1.5em;
+}
+
 .img-main {
     margin: 8px;
     text-align: center;
@@ -133,22 +148,22 @@ ul {
     margin-right: 48px;
     margin-top: 8px;
     padding: 10px 20px;
-    color: #888;
+    color: rgb(125, 125, 125);
     background: #ddd;
     border-radius: 5px;
 }
 
 .note a:link {
-    color: #82A8CF;
+    color: rgb(83, 161, 184);
 }
 
 .note a:visited {
-    color: #82A8CF;
+    color: rgb(83, 161, 184);
 }
 
 .download-note {
     padding: 1.5em;
-    color: #B2C0CF;
+    color: rgb(125, 125, 125);
 }
 
 .indented {
@@ -193,7 +208,7 @@ kbd {
 }
 
 .tile-size-table {
-    color: #eee;
+    color: rgb(240, 240, 240);
     padding: 1em 10em;
 }
 .tile-size-table table {
@@ -221,14 +236,14 @@ kbd {
 
 .block {
     padding: 15px;
-    background: #eee;
+    background: rgb(240, 240, 240);
     border-radius: 5px;
 }
 
 .description-block-wrapper {
     padding-top: 20px;
     padding-bottom: 20px;
-    background: #eee;
+    background: rgb(240, 240, 240);
 }
 .description-block {
     padding: 15px;
@@ -270,11 +285,11 @@ kbd {
     display: inline-block;
     vertical-align: middle;
     padding: 10px;
-    color: #eee;
+    color: rgb(240, 240, 240);
     font-size: 1.5em;
     font-weight: bold;
     text-align:center;
-    background: #607f9e;
+    background: rgb(83, 161, 184);
     width: auto;
     border-radius: 5px;
     -webkit-transition: 120ms ease-out 0s;
@@ -283,7 +298,7 @@ kbd {
     transition: 120ms ease-out 0s;
 }
 .button:hover {
-    background: #819ab3;
+    background: rgb(117, 180, 198);
 }
 
 .button-wrapper {
@@ -294,7 +309,7 @@ kbd {
 }
 
 .nav-button {
-    color: #eee;
+    color: rgb(240, 240, 240);
     background: #1d2331;
     padding: 10px;
     -webkit-transition: 120ms ease-out 0s;
@@ -304,16 +319,16 @@ kbd {
 }
 
 .nav-button:hover {
-    color: #82A8CF;
+    color: rgb(83, 161, 184);
 }
 
 .thumb-button {
     display: table-cell;
     vertical-align: middle;
-    color: #eee;
+    color: rgb(240, 240, 240);
     font-size: 2em;
     font-weight: bold;
-    background: #607f9e;
+    background: rgb(83, 161, 184);
     line-height: 60px;
     height: 60px;
     padding: 0px 5px;
@@ -323,7 +338,7 @@ kbd {
     transition: 120ms ease-out 0s;
 }
 .thumb-button:hover {
-    background: #819ab3;
+    background: rgb(117, 180, 198);
 }
 
 .rounded-TR {
@@ -372,5 +387,5 @@ kbd {
     margin-bottom: 12px;
     padding-top: 1px;
     display: block;
-    background: #CDD1DA;
+    background: rgba(0,0,0,0);
 }
